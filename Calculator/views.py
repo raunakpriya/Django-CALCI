@@ -11,7 +11,7 @@ from rest_framework.authentication import TokenAuthentication
 from django.conf.urls import url
 from django.contrib.auth.models import User
 
-#from .models import calc
+#from .models import Destination
 
 
 class Calculator(APIView):
@@ -24,7 +24,7 @@ class Calculator(APIView):
         if(num1==""or num2==""):
             return HttpResponse("Entries not provided")
         res=num1-num2
-        #result = Dstn.objects.create(num1 = num1, num2 = num2, res = res, operator = calc.subs)
+        #result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '-')
         #result.save()
         return HttpResponse(res)
     def get(self,request):
@@ -33,7 +33,7 @@ class Calculator(APIView):
         if(num1==" "or num2==" "):
             return HttpResponse("Entries not provided")
         res=num1+num2
-  #      result = Dstn.objects.create(num1 = num1, num2 = num2, res = res, operator = calc.add)
+  #      result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '+')
    #     result.save()
         return HttpResponse(res)
     def put(self,request):
@@ -42,7 +42,7 @@ class Calculator(APIView):
         if(num1==" "or num2==" "):
             return HttpResponse("Entries not provided")
         res=num1*num2
-    #    result = Dstn.objects.create(num1 = num1, num2 = num2, res = res, operator = calc.mult)
+    #    result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '*')
      #   result.save()
         return HttpResponse(res)
     def delete(self,request):
@@ -53,6 +53,6 @@ class Calculator(APIView):
         if(num2==0):
             return HttpResponse("Zero Division Error")
         res=num1/num2
-        #result = Dstn.objects.create(num1 = num1, num2 = num2, res = res, operator = calc.div)
+        #result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '/')
        # result.save()
         return HttpResponse(res)

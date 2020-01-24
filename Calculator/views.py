@@ -24,8 +24,8 @@ class Calculator(APIView):
         if(num1==""or num2==""):
             return HttpResponse("Entries not provided")
         res=num1-num2
-        #result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '-')
-        #result.save()
+        result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '-')
+        result.save()
         return HttpResponse(res)
     def get(self,request):
         num1=int(request.data.get('num1',""))
@@ -33,8 +33,8 @@ class Calculator(APIView):
         if(num1==" "or num2==" "):
             return HttpResponse("Entries not provided")
         res=num1+num2
-  #      result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '+')
-   #     result.save()
+        result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '+')
+        result.save()
         return HttpResponse(res)
     def put(self,request):
         num1=int(request.data.get('num1',""))
@@ -42,8 +42,8 @@ class Calculator(APIView):
         if(num1==" "or num2==" "):
             return HttpResponse("Entries not provided")
         res=num1*num2
-    #    result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '*')
-     #   result.save()
+        result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '*')
+        result.save()
         return HttpResponse(res)
     def delete(self,request):
         num1=request.data.get('num1',"")
@@ -53,6 +53,6 @@ class Calculator(APIView):
         if(num2==0):
             return HttpResponse("Zero Division Error")
         res=num1/num2
-        #result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '/')
-       # result.save()
+        result = Destination.objects.create(num1 = num1, num2 = num2, res = res, operator = '/')
+        result.save()
         return HttpResponse(res)
